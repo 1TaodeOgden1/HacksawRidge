@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class IdentifyBody : MonoBehaviour
 {
-    public Image infoImage;
+    public Sprite infoSprite;
 
     private void OnTriggerEnter(Collider other)
     {

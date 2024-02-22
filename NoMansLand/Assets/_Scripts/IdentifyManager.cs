@@ -42,6 +42,12 @@ public class IdentifyManager : MonoBehaviour
         identifyFinished = true;
         instructionMessage.gameObject.SetActive(false);
         infoImage.gameObject.SetActive(true);
+        
+        if (currentBody == null)
+        {
+            Debug.Log("No current body");
+        }
+        infoImage.sprite = currentBody.infoSprite;
 
     }
     private void Start()
