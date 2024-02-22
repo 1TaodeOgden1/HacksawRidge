@@ -7,53 +7,18 @@ public class IdentifyBody : MonoBehaviour
 {
     public Image infoImage;
 
-    public float totalTime = 1f;
-    [SerializeField] private float timer = 0;
-    [SerializeField] private bool identifyFinished = false;
-
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        IdentifyManager.Instance.identifySlider.value = timer / totalTime;
-        if (Input.GetKey(KeyCode.E) && !identifyFinished)
+        if (other.transform.CompareTag("Player"))
         {
-            timer += Time.deltaTime;
-
-            if (timer > totalTime)
-            {
-                IdentifyFinished();
-            }
+            IdentifyManager.Instance.currentBody = this;
         }
-
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            if (identifyFinished)
-            {
-                IdentifyFinished();
-            }
-            else
-            {
-                ResetIdentify();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ResetIdentify();
-        }
-
     }
-
-    public void ResetIdentify()
+    private void OnTriggerExit(Collider other)
     {
-        timer = 0;
-        identifyFinished = false;
-        infoImage.gameObject.SetActive(false);
-    }
-    public void IdentifyFinished()
-    {
-        timer = 0;
-        identifyFinished = true;
-        infoImage.gameObject.SetActive(true);
-        
+        if (other.transform.CompareTag("Player"))
+        {
+            IdentifyManager.Instance.currentBody = null;
+        }
     }
 }
