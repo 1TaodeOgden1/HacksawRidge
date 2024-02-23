@@ -425,11 +425,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1705091307171509389, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 2081335027339111991, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
         type: 3}
       propertyPath: m_RootOrder
@@ -488,23 +483,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1705091307171509389, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 664040896}
-    - targetCorrespondingSourceObject: {fileID: 1705091307171509389, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 664040897}
-    - targetCorrespondingSourceObject: {fileID: 1705091307171509389, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 664040900}
-    - targetCorrespondingSourceObject: {fileID: 1705091307171509389, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 664040901}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb27dbdf9ac65d47b0529e8aaeab19b, type: 3}
 --- !u!1 &664040895 stripped
 GameObject:
@@ -512,107 +491,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 552134376}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &664040896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664040895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c91faef2e6a173e4293724e6e5734f23,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &664040897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664040895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e287315a9d7685d4c90b592494457f98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 664040898}
-  movementSpeed: 0.5
---- !u!95 &664040898 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6552898970908516011, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
-    type: 3}
-  m_PrefabInstance: {fileID: 552134376}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &664040900
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664040895}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &664040901
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664040895}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &1302348962
 PrefabInstance:
   m_ObjectHideFlags: 0
