@@ -52,11 +52,11 @@ public class IdentifyManager : MonoBehaviour
         if (currentBody != null)
         {
             handleInputs();
-            handleInstruction();
+            handleInstruction(true);
         }
         else
         {
-            instructionMessage.gameObject.SetActive(false);
+            handleInstruction(false);
         }
         
     }
@@ -68,38 +68,46 @@ public class IdentifyManager : MonoBehaviour
             if (timer > totalTime) IdentifyFinished();
         }
 
-        if (Input.GetKeyUp(KeyCode.E) && !identifyFinished) IdentifyReset();
+        if (Input.GetKeyUp(KeyCode.E) && !identifyFinished) IdentifyReset(); //stop pressing halfway, reset
 
         if (Input.GetKeyDown(KeyCode.Q)) IdentifyReset();
     }
-    private void handleInstruction()
+    private void handleInstruction(bool haveBody)
     {
-        //instruction text
-        if (identifyFinished) instructionMessage.gameObject.SetActive(false);
-        else instructionMessage.gameObject.SetActive(true);
-        //slider
-        identifySlider.value = timer / totalTime;
-        if (identifySlider.value < 0.01f || identifySlider.value > 0.99f) identifySlider.gameObject.SetActive(false);
-        else identifySlider.gameObject.SetActive(true);
+        if (haveBody)
+        {
+            //instruction text
+            if (identifyFinished) instructionMessage.gameObject.SetActive(false);
+            else instructionMessage.gameObject.SetActive(true);
+            //slider
+            identifySlider.value = timer / totalTime;
+            if (identifySlider.value < 0.01f || identifySlider.value > 0.99f) identifySlider.gameObject.SetActive(false);
+            else identifySlider.gameObject.SetActive(true);
+        }
+        else
+        {
+            timer = 0;
+            //instruction text
+            instructionMessage.gameObject.SetActive(false);
+            //slider
+            identifySlider.value = 0;
+            identifySlider.gameObject.SetActive(false);
+            //info
+            contents.SetActive(false);
+        }
+        
     }
     public void IdentifyReset()
     {
         timer = 0;
         identifyFinished = false;
-        sprite.gameObject.SetActive(false);
         contents.SetActive(false);
     }
+
     public void IdentifyFinished()
     {
         timer = totalTime;
         identifyFinished = true;
-        sprite.gameObject.SetActive(true);
-
-        if (currentBody == null)
-        {
-            Debug.LogWarning("No current body");
-            return;
-        }
         contents.SetActive(true);
         showInfo();
     }

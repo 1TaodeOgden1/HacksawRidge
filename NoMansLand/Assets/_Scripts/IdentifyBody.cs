@@ -17,6 +17,7 @@ public class IdentifyBody : MonoBehaviour
         if (other.transform.CompareTag("Player"))
         {
             IdentifyManager.Instance.currentBody = this;
+            IdentifyManager.Instance.IdentifyReset();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -24,6 +25,7 @@ public class IdentifyBody : MonoBehaviour
         if (other.transform.CompareTag("Player"))
         {
             IdentifyManager.Instance.currentBody = null;
+            IdentifyManager.Instance.IdentifyReset();
         }
     }
 }
