@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class IdentifyBody : MonoBehaviour
 {
-    public Sprite infoSprite;
+    public Sprite sprite;
+    public string bodyName;
+    public string rank;
+    public string DOB;
+    public string backgroundStory;
 
     private void OnTriggerEnter(Collider other)
     {
