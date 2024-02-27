@@ -28,4 +28,10 @@ public class IdentifyBody : MonoBehaviour
             IdentifyManager.Instance.IdentifyReset();
         }
     }
+    public void GraspPlayer()
+    {
+        Transform dragTransform = GameObject.Find("DragPosition").transform;
+        transform.position = dragTransform.position;
+        transform.parent = dragTransform.parent;
+    }
 }

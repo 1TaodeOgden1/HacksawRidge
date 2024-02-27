@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
 
 public class IdentifyManager : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class IdentifyManager : MonoBehaviour
     [SerializeField] private float timer = 0;
     [SerializeField] private bool identifyFinished = false;
 
-    [SerializeField] private InputActionReference expand, collapse;
+    [SerializeField] private InputActionReference expand, collapse, drag;
     
     #region singleton
     private static IdentifyManager _instance;
@@ -41,25 +42,21 @@ public class IdentifyManager : MonoBehaviour
     {
         expand.action.canceled += ExpandButtonReleased;
         collapse.action.performed += IdentifyReset;
+        drag.action.performed += StartDragging;
     }
+
     private void OnDisable()
     {
         expand.action.canceled -= ExpandButtonReleased;
         collapse.action.performed -= IdentifyReset;
+        drag.action.performed -= StartDragging;
     }
-    public void OnIdentify()
-    {
 
-    }
     private void Start()
     {
         GameObject[] gos = GameObject.FindGameObjectsWithTag("Body");
         bodies.Clear();
-        foreach (GameObject go in gos)
-        {
-            bodies.Add(go.GetComponent<IdentifyBody>());
-        }
-
+        foreach (GameObject go in gos) bodies.Add(go.GetComponent<IdentifyBody>());
         IdentifyReset();
         identifySlider.gameObject.SetActive(false);
     }
@@ -109,6 +106,13 @@ public class IdentifyManager : MonoBehaviour
             contents.SetActive(false);
         }
         
+    }
+
+    private void StartDragging(InputAction.CallbackContext context)
+    {
+        if (currentBody == null) return;
+        if (!identifyFinished) return;
+        currentBody.GraspPlayer();
     }
     private void ExpandButtonReleased(InputAction.CallbackContext obj)
     {
