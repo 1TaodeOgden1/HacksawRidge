@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class IdentifyManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class IdentifyManager : MonoBehaviour
     [Header("private fields")]
     [SerializeField] private float timer = 0;
     [SerializeField] private bool identifyFinished = false;
+
+    [SerializeField] private InputActionReference expand, collapse;
     
     #region singleton
     private static IdentifyManager _instance;
@@ -34,6 +37,20 @@ public class IdentifyManager : MonoBehaviour
         else _instance = this;
     }
     #endregion
+    private void OnEnable()
+    {
+        expand.action.canceled += ExpandButtonReleased;
+        collapse.action.performed += IdentifyReset;
+    }
+    private void OnDisable()
+    {
+        expand.action.canceled -= ExpandButtonReleased;
+        collapse.action.performed -= IdentifyReset;
+    }
+    public void OnIdentify()
+    {
+
+    }
     private void Start()
     {
         GameObject[] gos = GameObject.FindGameObjectsWithTag("Body");
@@ -62,15 +79,11 @@ public class IdentifyManager : MonoBehaviour
     }
     private void handleInputs()
     {
-        if (Input.GetKey(KeyCode.E) && !identifyFinished)
+        if (expand.action.inProgress && !identifyFinished)
         {
             timer += Time.deltaTime;
             if (timer > totalTime) IdentifyFinished();
         }
-
-        if (Input.GetKeyUp(KeyCode.E) && !identifyFinished) IdentifyReset(); //stop pressing halfway, reset
-
-        if (Input.GetKeyDown(KeyCode.Q)) IdentifyReset();
     }
     private void handleInstruction(bool haveBody)
     {
@@ -97,7 +110,18 @@ public class IdentifyManager : MonoBehaviour
         }
         
     }
+    private void ExpandButtonReleased(InputAction.CallbackContext obj)
+    {
+        if (identifyFinished) return;
+        IdentifyReset();
+    }
     public void IdentifyReset()
+    {
+        timer = 0;
+        identifyFinished = false;
+        contents.SetActive(false);
+    }
+    public void IdentifyReset(InputAction.CallbackContext obj)
     {
         timer = 0;
         identifyFinished = false;
