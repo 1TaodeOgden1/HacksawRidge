@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed = 0.5f;
 
     private Vector2 movement = Vector2.zero;
+    private Vector2 lookDelta = Vector2.zero;
+
+    public float lookSensitivity = 0.2f;
 
     // Update is called once per frame
     void Update()
@@ -41,11 +44,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += new Vector3(movement.x, 0, movement.y) * movementSpeed * Time.deltaTime;
+        transform.position += Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0) * new Vector3(movement.x, 0, movement.y) * movementSpeed * Time.deltaTime;
     }
 
     public void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
+    }
+
+    public void OnLook(InputValue value)
+    {
+        lookDelta = value.Get<Vector2>();
+
+        if(lookDelta.x != 0)
+        {
+            transform.rotation = transform.rotation * Quaternion.Euler(0, lookDelta.x * lookSensitivity, 0);
+        }
     }
 }
