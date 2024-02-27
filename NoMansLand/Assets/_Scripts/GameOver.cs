@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseUI : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,15 +17,13 @@ public class PauseUI : MonoBehaviour
         
     }
 
-    void ResumeGame()
+    public void ResetGame()
     {
-        this.gameObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    void QuitGame()
+
+    public void QuitGame()
     {
         SceneManager.LoadScene("MainMenu");
-
     }
-
-    
 }

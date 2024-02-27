@@ -921,7 +921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813fb274259c2944fbd14f9e03ebb83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  game_scene_name: SampleScene
+  game_scene_name: Alpha0_1
 --- !u!1 &1485269056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1017,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &1485269059
 MonoBehaviour:
   m_ObjectHideFlags: 0
