@@ -24,7 +24,6 @@ public class OnboardingPanel : MonoBehaviour
 
     public void BeginGame()
     {
-        Cursor.visible = false;
         foreach (PlayerInput manager in inputManagers)
         {
             manager.ActivateInput();
