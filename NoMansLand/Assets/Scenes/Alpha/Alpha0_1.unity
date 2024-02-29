@@ -1145,6 +1145,53 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2349278836271768698}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &644662384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 644662386}
+  - component: {fileID: 644662385}
+  m_Layer: 0
+  m_Name: MouseVisibilityManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &644662385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644662384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29830dec12081eb4f847649943b42860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableOnUIElements:
+  - {fileID: 1841411033}
+  - {fileID: 1566181122}
+--- !u!4 &644662386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644662384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.055338, y: -20.23776, z: -44.10295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664040895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1705091307171509389, guid: abb27dbdf9ac65d47b0529e8aaeab19b,

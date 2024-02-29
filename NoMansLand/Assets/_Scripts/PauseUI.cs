@@ -23,13 +23,11 @@ public class PauseUI : MonoBehaviour
         this.gameObject.SetActive(false);
         Time.timeScale = 1;
         pauseManager.isPaused = false;
-        Cursor.visible = false;
     }
 
     public void PauseGame()
     {
         Time.timeScale = 0;
-        Cursor.visible = true;
     }
     public void QuitGame()
     {
