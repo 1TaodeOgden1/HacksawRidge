@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3979824055911801921}
   - component: {fileID: 515742972278951732}
   m_Layer: 5
-  m_Name: Controls
+  m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 4547174657324973192}
   m_OnClick:
     m_PersistentCalls:
@@ -874,8 +874,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284111466
-  m_fontColor: {r: 0.41509432, g: 0.35439655, b: 0.35439655, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1027,3 +1027,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3339714b0a771d342afe9ffc7654058a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseManager: {fileID: 0}
