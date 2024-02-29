@@ -118,8 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d432ffde75905ed4998722bf095792a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 2a62bb7e453d2374eafef47b2a7f224c, type: 3}
   bodyName: Ryan
   rank: Private
   DOB: 20000101
-  backgroundStory: First day on battle and lost a leg
+  backgroundStory: "This man\u2019s uniform has been stewing in blood, dirt, and
+    sweat. His bloodied hand clutches his stomach. "
