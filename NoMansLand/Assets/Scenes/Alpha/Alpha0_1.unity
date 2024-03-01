@@ -1112,6 +1112,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4611383094571486737, guid: 0d70756cc6955a34f8678354a3199597,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -234
+      objectReference: {fileID: 0}
     - target: {fileID: 6852843434802629660, guid: 0d70756cc6955a34f8678354a3199597,
         type: 3}
       propertyPath: m_Name
@@ -1943,7 +1948,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "The day's battle has ended. An uneasy stalemate hangs over the battlefield.\n\nOut
-    of your battalion, you were one of the very few who showed up to rollcall. \n\nYour
+    of your battalion, you were one of the  few who showed up to rollcall. \n\nYour
     brother must be out there, lying amongst the doomed. Tonight's your only chance
     to bring him back home.\n\n \n\n"
   m_isRightToLeft: 0
