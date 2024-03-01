@@ -5,32 +5,25 @@ using UnityEngine.InputSystem;
 
 public class PlayerPause : MonoBehaviour
 {
-    public bool isPaused;
-    public GameObject pausePrefab;
+    public PauseUI pausePanel;
 
     public void Start()
     {
-        pausePrefab = GameObject.Find("PauseScreen");
-        pausePrefab.SetActive(false);
+
     }
 
     public void OnPause(InputValue value)
     {
-        if (!isPaused)
+        //pause the game; show the pause HUD
+        if (!pausePanel.isPaused)
         {
-            pausePrefab.SetActive(true);
-            pausePrefab.GetComponent<PauseUI>().PauseGame();
-            isPaused = true;
+            pausePanel.PauseGame();
         }
+        //unpause the game; close the pause HUD
         else
         {
-            isPaused = false;
+            pausePanel.ResumeGame();
         }
-
-
-
-
-
     }
 
 

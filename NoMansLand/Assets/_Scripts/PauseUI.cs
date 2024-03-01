@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseUI : MonoBehaviour
 {
-    public PlayerPause pauseManager; 
+    public GameObject pauseScreen;
+    public GameObject optionsPanel; 
+    public bool isPaused = false; 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        pauseScreen.SetActive(false);
+        optionsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,15 +24,32 @@ public class PauseUI : MonoBehaviour
 
     public void ResumeGame()
     {
-        this.gameObject.SetActive(false);
+        pauseScreen.SetActive(false);
+        optionsPanel.SetActive(false);
         Time.timeScale = 1;
-        pauseManager.isPaused = false;
+   
     }
 
     public void PauseGame()
     {
+        pauseScreen.SetActive(true);
+        optionsPanel.SetActive(false);
         Time.timeScale = 0;
     }
+
+    public void OpenOptions()
+    {
+        optionsPanel.SetActive(true);
+        pauseScreen.SetActive(false);
+    }
+
+    public void CloseOptions()
+    {
+        optionsPanel.SetActive(false);
+        pauseScreen.SetActive(true);
+    }
+
+
     public void QuitGame()
     {
         SceneManager.LoadScene("MainMenu");
