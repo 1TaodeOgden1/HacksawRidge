@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.055608343, g: 0.039019052, b: 0.034408405, a: 1}
+  m_IndirectSpecularColor: {r: 0.05560846, g: 0.039019402, b: 0.034408502, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1652,6 +1652,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6285371859045440629, guid: f80b99f985d44fc448485a6f12c5ac03,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 84.974014
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285371859045440629, guid: f80b99f985d44fc448485a6f12c5ac03,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 84.974
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285371859045440629, guid: f80b99f985d44fc448485a6f12c5ac03,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 84.97398
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285371859045440629, guid: f80b99f985d44fc448485a6f12c5ac03,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 41.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285371859045440629, guid: f80b99f985d44fc448485a6f12c5ac03,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285371859045440629, guid: f80b99f985d44fc448485a6f12c5ac03,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2456,7 +2486,7 @@ RectTransform:
   - {fileID: 598422207}
   - {fileID: 1372541139}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2597,7 +2627,7 @@ PrefabInstance:
     - target: {fileID: 1056766831782442022, guid: 6664eb93ad9e10245879913974e262c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1056766831782442022, guid: 6664eb93ad9e10245879913974e262c9,
         type: 3}
