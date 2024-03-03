@@ -43,7 +43,7 @@ public class Timer : MonoBehaviour
 
     void OnTimeEnd()
     {
-        Time.timeScale = 0; //stops all update-based movement
+
         finishedScreen.SetActive(true);
     }
 
