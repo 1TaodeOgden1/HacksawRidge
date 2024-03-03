@@ -11,23 +11,15 @@ public class IdentifyManager : MonoBehaviour
     public TMP_Text instructionMessage;
     public Slider identifySlider;
 
-    [Header("contents")]
-    public GameObject contents;
-    public TMP_Text bodyName;
-    public TMP_Text rank;
-    public TMP_Text DOB;
-    public TMP_Text backgroundStory;
-    public Image sprite;
-
     public List<IdentifyBody> bodies = new List<IdentifyBody>();
-    public IdentifyBody currentBody;
+    public IdentifyBody examiningBody;
+    public IdentifyBody draggingBody;
     public float totalTime = 1f;
 
     [Header("private fields")]
     [SerializeField] private float timer = 0;
-    [SerializeField] private bool identifyFinished = false;
 
-    [SerializeField] private InputActionReference expand, collapse, drag;
+    [SerializeField] private InputActionReference identify, unidentify, drag, drop;
     
     #region singleton
     private static IdentifyManager _instance;
@@ -40,112 +32,128 @@ public class IdentifyManager : MonoBehaviour
     #endregion
     private void OnEnable()
     {
-        expand.action.canceled += ExpandButtonReleased;
-        collapse.action.performed += IdentifyReset;
-        drag.action.performed += StartDragging;
+        identify.action.performed += IdentifyButtonPressed;
+        identify.action.canceled += IdentifyButtonReleased;
+        unidentify.action.performed += UnidentifyButtonPressed;
+        drag.action.performed += DragButtonPressed;
+        drop.action.performed += DropButtonPressed;
     }
 
     private void OnDisable()
     {
-        expand.action.canceled -= ExpandButtonReleased;
-        collapse.action.performed -= IdentifyReset;
-        drag.action.performed -= StartDragging;
+        identify.action.performed -= IdentifyButtonPressed;
+        identify.action.canceled -= IdentifyButtonReleased;
+        unidentify.action.performed -= UnidentifyButtonPressed;
+        drag.action.performed -= DragButtonPressed;
+        drop.action.performed -= DropButtonPressed;
+    }
+    private void IdentifyButtonPressed(InputAction.CallbackContext context)
+    {
+        if (examiningBody != null) examiningBody.ShowInfo();
+        if (draggingBody != null) draggingBody.ShowInfo();
+
+        HandleInstructions();
+    }
+    private void IdentifyButtonReleased(InputAction.CallbackContext obj)
+    {
+        IdentifyCheck();
+
+        HandleInstructions();
+    }
+    public void UnidentifyButtonPressed(InputAction.CallbackContext obj)
+    {
+        if (examiningBody != null) examiningBody.HideInfo();
+        if (draggingBody != null) draggingBody.HideInfo();
+
+        HandleInstructions();
+    }
+    private void DragButtonPressed(InputAction.CallbackContext context)
+    {
+        Debug.Log("Drag");
+        if (examiningBody == null) return;
+        if (draggingBody != null) draggingBody.DitchPlayer();
+
+        draggingBody = examiningBody;
+        draggingBody.GraspPlayer();
+        examiningBody = null;
+
+
+        HandleInstructions();
+    }
+    private void DropButtonPressed(InputAction.CallbackContext context)
+    {
+        if (draggingBody == null) return;
+        draggingBody.DitchPlayer();
+        if (examiningBody == null) draggingBody = examiningBody;
+        draggingBody = null;
+
+        HandleInstructions();
     }
 
     private void Start()
     {
-        GameObject[] gos = GameObject.FindGameObjectsWithTag("Body");
         bodies.Clear();
+        GameObject[] gos = GameObject.FindGameObjectsWithTag("Body");
         foreach (GameObject go in gos) bodies.Add(go.GetComponent<IdentifyBody>());
-        IdentifyReset();
+        IdentifyCheck();
         identifySlider.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (currentBody != null)
+        if (examiningBody != null)
         {
             handleInputs();
-            handleInstruction(true);
-        }
-        else
-        {
-            handleInstruction(false);
-        }
-        
+        }        
     }
     private void handleInputs()
     {
-        if (expand.action.inProgress && !identifyFinished)
+        if (identify.action.inProgress)
         {
             timer += Time.deltaTime;
             if (timer > totalTime) IdentifyFinished();
         }
     }
-    private void handleInstruction(bool haveBody)
+    public void HandleInstructions()
     {
-        if (haveBody)
-        {
-            //instruction text
-            if (identifyFinished) instructionMessage.gameObject.SetActive(false);
-            else instructionMessage.gameObject.SetActive(true);
-            //slider
-            identifySlider.value = timer / totalTime;
-            if (identifySlider.value < 0.01f || identifySlider.value > 0.99f) identifySlider.gameObject.SetActive(false);
-            else identifySlider.gameObject.SetActive(true);
-        }
-        else
-        {
-            timer = 0;
-            //instruction text
-            instructionMessage.gameObject.SetActive(false);
-            //slider
-            identifySlider.value = 0;
-            identifySlider.gameObject.SetActive(false);
-            //info
-            contents.SetActive(false);
-        }
-        
-    }
+        instructionMessage.gameObject.SetActive(true);
+        instructionMessage.text = "";
 
-    private void StartDragging(InputAction.CallbackContext context)
-    {
-        if (currentBody == null) return;
-        if (!identifyFinished) return;
-        currentBody.GraspPlayer();
+        if (examiningBody != null)
+        {
+            if (examiningBody.contents.activeSelf) instructionMessage.text += "Press 'Q' to closs \n";
+            else instructionMessage.text += "Press 'E' to identify \n";
+        }
+        else if (draggingBody != null)
+        {
+            if (draggingBody.contents.activeSelf) instructionMessage.text += "Press 'Q' to closs \n";
+            else instructionMessage.text += "Press 'E' to identify \n";
+        }
+
+        if (examiningBody == null && draggingBody == null) return;
+        if (examiningBody != null && draggingBody == null )
+        {
+            instructionMessage.text += "Press 'F' to drag \n";
+        }
+        if (examiningBody == null && draggingBody != null )
+        {
+            instructionMessage.text += "Press 'SPACE' to drop \n";
+        }
+        if(examiningBody != null && draggingBody != null)
+        {
+            instructionMessage.text += "You can only drag one person \n";
+            instructionMessage.text += "Press 'F' to replace \n";
+            instructionMessage.text += "Press 'SPACE' to drop \n";
+        }
     }
-    private void ExpandButtonReleased(InputAction.CallbackContext obj)
-    {
-        if (identifyFinished) return;
-        IdentifyReset();
-    }
-    public void IdentifyReset()
+    
+    public void IdentifyCheck()
     {
         timer = 0;
-        identifyFinished = false;
-        contents.SetActive(false);
     }
-    public void IdentifyReset(InputAction.CallbackContext obj)
-    {
-        timer = 0;
-        identifyFinished = false;
-        contents.SetActive(false);
-    }
-
     public void IdentifyFinished()
     {
         timer = totalTime;
-        identifyFinished = true;
-        contents.SetActive(true);
-        showInfo();
-    }
-    private void showInfo()
-    {
-        if (currentBody.bodyName != null) bodyName.text = currentBody.bodyName;
-        if (currentBody.rank != null) rank.text = currentBody.rank;
-        if (currentBody.DOB != null) DOB.text = currentBody.DOB;
-        if (currentBody.backgroundStory != null) backgroundStory.text = currentBody.backgroundStory;
-        if (currentBody.sprite != null) sprite.sprite = currentBody.sprite;
     }
 
 }
