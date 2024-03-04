@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 1705091307171509389, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
         type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2081335027339111991, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
         type: 3}
@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: 2081335027339111991, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00000047683716
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 2081335027339111991, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
         type: 3}
@@ -100,6 +100,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1347351268193935734}
+    - targetCorrespondingSourceObject: {fileID: 1705091307171509389, guid: abb27dbdf9ac65d47b0529e8aaeab19b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5629095111842325975}
   m_SourcePrefab: {fileID: 100100000, guid: abb27dbdf9ac65d47b0529e8aaeab19b, type: 3}
 --- !u!4 &2465739038192459351 stripped
 Transform:
@@ -126,6 +130,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 0}
+--- !u!81 &5629095111842325975
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986942340783277293}
+  m_Enabled: 1
 --- !u!1001 &4711961893471830939
 PrefabInstance:
   m_ObjectHideFlags: 0
