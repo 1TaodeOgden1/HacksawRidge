@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RectOverlapSolver : MonoBehaviour
@@ -24,11 +25,9 @@ public class RectOverlapSolver : MonoBehaviour
     public void UpdateContents()
     {
         contents.Clear();
-        Debug.Log("Rects update");
         GameObject[] objArray = GameObject.FindGameObjectsWithTag("Body");
         foreach (GameObject obj in objArray)
         {
-            Debug.Log(obj.name);
             if (obj.GetComponentInChildren<WorldUIToCam>() == null) continue;
             contents.Add(obj.GetComponentInChildren<WorldUIToCam>());
         }
@@ -56,11 +55,40 @@ public class RectOverlapSolver : MonoBehaviour
             activeContents[0].RestoreOffset();
             return;
         }
+
+        bool haveDraggingBody = false;
+        int tempIndex = -1;
         
-        for(int i = 0; i < activeContents.Count; i++)
+        for (int i = 0; i < activeContents.Count; i++)
         {
-            activeContents[i].TweakOffset(i);
+            if (activeContents[i].GetComponentInParent<IdentifyBody>() == null) continue;
+            else
+            {
+                if (activeContents[i].GetComponentInParent<IdentifyBody>() == IdentifyManager.Instance.draggingBody)
+                {
+                    haveDraggingBody = true;
+                    tempIndex = i; 
+                    break;
+                }
+            }
         }
-        
+
+        if (haveDraggingBody)
+        {
+            for (int i = 0; i < activeContents.Count; i++)
+            {
+                if(i != tempIndex)
+                {
+                    activeContents[i].TweakOffset(1);
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < activeContents.Count; i++)
+            {
+                activeContents[i].TweakOffset(i);
+            }
+        }        
     }
 }

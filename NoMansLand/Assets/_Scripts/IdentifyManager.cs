@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System;
+using System.Xml.Serialization;
 
 public class IdentifyManager : MonoBehaviour
 {
@@ -49,8 +50,8 @@ public class IdentifyManager : MonoBehaviour
     }
     private void IdentifyButtonPressed(InputAction.CallbackContext context)
     {
-        if (examiningBody != null) examiningBody.ShowInfo();
-        if (draggingBody != null) draggingBody.ShowInfo();
+        if (examiningBody != null) ShowInfoCheck(examiningBody);
+        if (draggingBody != null) ShowInfoCheck(draggingBody);
 
         HandleInstructions();
     }
@@ -99,21 +100,30 @@ public class IdentifyManager : MonoBehaviour
         identifySlider.gameObject.SetActive(false);
     }
 
-    private void Update()
+    private void ShowInfoCheck(IdentifyBody body)
     {
-        if (examiningBody != null)
+        if (body.identified)
         {
-            handleInputs();
-        }        
+            body.ShowInfo();
+            return;
+        }
+
+        timer = 0;
     }
-    private void handleInputs()
+
+    private void Update()
     {
         if (identify.action.inProgress)
         {
             timer += Time.deltaTime;
             if (timer > totalTime) IdentifyFinished();
         }
+
+        identifySlider.value = timer / totalTime;
+        if(identifySlider.value < 0.05 || identifySlider.value > 0.95) identifySlider.gameObject.SetActive(false) ;
+        else identifySlider.gameObject.SetActive(true);
     }
+
     public void HandleInstructions()
     {
         instructionMessage.gameObject.SetActive(true);
@@ -154,6 +164,17 @@ public class IdentifyManager : MonoBehaviour
     public void IdentifyFinished()
     {
         timer = totalTime;
+        if (examiningBody != null)
+        {
+            examiningBody.identified = true;
+            examiningBody.ShowInfo();
+        }
+        if (draggingBody != null)
+        {
+            draggingBody.identified = true;
+            draggingBody.ShowInfo();
+        }
+
     }
 
 }

@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 2a62bb7e453d2374eafef47b2a7f224c, type: 3}
-  bodyName: Ryan
+  bodyName: Ryan0
   rank: Private
   DOB: 20000101
   backgroundStory: "This man\u2019s uniform has been stewing in blood, dirt, and
