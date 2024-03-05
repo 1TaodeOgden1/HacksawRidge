@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour
     public DropArea dropArea;
     public TextMeshProUGUI saved_container;
     public TextMeshProUGUI bro_checker;
+    public GameObject LOA_container; 
 
     public string[] savedNames;
     public int savedNames_length = 24;
@@ -63,6 +64,15 @@ public class GameOver : MonoBehaviour
             tempString += $"{name}\n";
         }
         saved_container.text = tempString;
+
+        Image[] image_slots = LOA_container.GetComponentsInChildren<Image>();
+
+        for(int i = 0; i < dropArea.faces_of_the_Lost.Count; i++)
+        {
+            image_slots[i].color = Color.white;
+            image_slots[i].sprite = dropArea.faces_of_the_Lost[i];
+        }
+
     }
 
     public void LoadNext()
@@ -88,6 +98,7 @@ public class GameOver : MonoBehaviour
 
     public void QuitGame()
     {
+        Time.timeScale = 1; 
         SceneManager.LoadScene("MainMenu");
     }
 }

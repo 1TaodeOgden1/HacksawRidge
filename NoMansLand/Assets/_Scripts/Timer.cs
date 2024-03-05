@@ -43,7 +43,6 @@ public class Timer : MonoBehaviour
 
     void OnTimeEnd()
     {
-
         finishedScreen.SetActive(true);
     }
 

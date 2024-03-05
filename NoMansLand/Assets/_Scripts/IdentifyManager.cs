@@ -131,29 +131,29 @@ public class IdentifyManager : MonoBehaviour
 
         if (examiningBody != null)
         {
-            if (examiningBody.contents.activeSelf) instructionMessage.text += "Press 'Q' to closs \n";
-            else instructionMessage.text += "Press 'E' to identify \n";
+            if (examiningBody.contents.activeSelf) instructionMessage.text += "Close (Q) \n";
+            else instructionMessage.text += "Identify (Hold E) \n";
         }
         else if (draggingBody != null)
         {
-            if (draggingBody.contents.activeSelf) instructionMessage.text += "Press 'Q' to closs \n";
-            else instructionMessage.text += "Press 'E' to identify \n";
+            if (draggingBody.contents.activeSelf) instructionMessage.text += "Close (Q) \n";
+            else instructionMessage.text += "Identify (Hold E) \n";
         }
 
         if (examiningBody == null && draggingBody == null) return;
-        if (examiningBody != null && draggingBody == null )
+        if ((examiningBody != null && draggingBody == null))
         {
-            instructionMessage.text += "Press 'F' to drag \n";
+            instructionMessage.text += "Drag (F) \n";
         }
         if (examiningBody == null && draggingBody != null )
         {
-            instructionMessage.text += "Press 'SPACE' to drop \n";
+            instructionMessage.text += "Drop (Space) \n";
         }
         if(examiningBody != null && draggingBody != null)
         {
             instructionMessage.text += "You can only drag one person \n";
-            instructionMessage.text += "Press 'F' to replace \n";
-            instructionMessage.text += "Press 'SPACE' to drop \n";
+            instructionMessage.text += "Replace (F) \n";
+            instructionMessage.text += "Drop (Space) \n";
         }
     }
     
