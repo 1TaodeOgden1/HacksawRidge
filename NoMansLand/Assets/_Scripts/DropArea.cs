@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class DropArea : MonoBehaviour
 {
     public List<string> namesSaved;
-    public List<string> namesLost;
+    public List<Sprite> faces_of_the_Lost;
     public TextMeshProUGUI objectiveText;
     public GameObject homePrompt;
 
@@ -32,8 +33,9 @@ public class DropArea : MonoBehaviour
         if (collision.transform.CompareTag("Body")){
 
 
-
-            string bodyName = collision.gameObject.GetComponent<IdentifyBody>().bodyName; 
+            string bodyName = collision.gameObject.GetComponent<IdentifyBody>().bodyName;
+            Sprite bodyFace = collision.gameObject.GetComponent<IdentifyBody>().headImage.sprite;
+            faces_of_the_Lost.Remove(bodyFace);
             namesSaved.Add(bodyName);
 
             if(bodyName == broName)

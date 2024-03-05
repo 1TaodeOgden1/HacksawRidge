@@ -29,6 +29,8 @@ public class OnboardingPanel : MonoBehaviour
             manager.ActivateInput();
         }
 
+        Time.timeScale = 1;
+
         this.gameObject.SetActive(false);
         timer.StartTimer();
     }
