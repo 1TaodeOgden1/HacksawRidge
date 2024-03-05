@@ -224,18 +224,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   namesSaved: []
-  namesLost:
-  - David
-  - Ryan
-  - Coehl
-  - James
-  - Stephen
-  - Nicholas
-  - Bowman
-  - Benedict
-  - Nathan
-  - Barry
-  - Alec
+  faces_of_the_Lost:
+  - {fileID: 21300000, guid: c847e234cf92a65488236ff840347094, type: 3}
+  - {fileID: 21300000, guid: e2508ea0a6d46314d8a9693537ef9316, type: 3}
+  - {fileID: 21300000, guid: 629981e9ec1b12e409fe234d44352603, type: 3}
+  - {fileID: 21300000, guid: b52d995e0ece3ed49871cbe961a82f12, type: 3}
+  - {fileID: 21300000, guid: fe6b0cbbfc3429f49b933c8570d072e1, type: 3}
+  - {fileID: 21300000, guid: 7c91e0e60a59c3f41920c95761c24986, type: 3}
+  - {fileID: 21300000, guid: e2e08eb351546aa449431e51a1ccdb92, type: 3}
+  - {fileID: 21300000, guid: fb8016c558d3c904bb8703336ea9a447, type: 3}
+  - {fileID: 21300000, guid: e275c6b3daea8ef46997f6f4f6f88977, type: 3}
   objectiveText: {fileID: 0}
   homePrompt: {fileID: 5200461627890352994}
   broName: Ryan
