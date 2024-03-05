@@ -2,15 +2,69 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DropArea : MonoBehaviour
 {
-    public int score = 0;
+    public List<string> namesSaved;
+    public List<string> namesLost;
+    public TextMeshProUGUI objectiveText;
+    public GameObject homePrompt;
+
+    //Return to Base Component; enables the player to end the game early
+    private ReturnToBase rtb;
+    public string broName = "David";
+    public bool broSaved = false;
+    public Timer timer;
+
+    public bool overlapping = false;
+
+
+    public void Start()
+    {
+        objectiveText = GameObject.Find("ObjectiveText").GetComponent<TextMeshProUGUI>();
+        homePrompt.SetActive(false);
+    }
     private void OnTriggerEnter(Collider collision)
     {
+        overlapping = true;
+
         if (collision.transform.CompareTag("Body")){
+
+
+
+            string bodyName = collision.gameObject.GetComponent<IdentifyBody>().bodyName; 
+            namesSaved.Add(bodyName);
+
+            if(bodyName == broName)
+            {
+                broSaved = true;
+                objectiveText.text = "Return home?";
+            }
+
             Destroy(collision.gameObject);
-            score++;
+
         }
+
+        if (broSaved)
+        {
+            homePrompt.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        overlapping = false;
+        homePrompt.SetActive(false);
+    }
+
+    public void OnLeave(InputValue value)
+    {
+        Debug.Log("Hi");
+        if (broSaved && overlapping)
+        {
+            timer.timeRemaining = 0;
+        }
+
     }
 }

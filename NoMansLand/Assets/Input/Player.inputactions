@@ -69,9 +69,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Drop",
+                    "name": "Leave",
                     "type": "Button",
-                    "id": "315d3c79-7b3a-43d3-b00f-ef6baac2ba54",
+                    "id": "0f8886aa-fd56-41da-8e62-3017e573f303",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -316,7 +316,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Identify",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -335,7 +335,7 @@
                 {
                     "name": "",
                     "id": "892a50a5-0514-4108-837a-21e4ec344822",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -345,12 +345,12 @@
                 },
                 {
                     "name": "",
-                    "id": "37d8c230-e02b-4377-b456-dfce85dbd1db",
-                    "path": "<Keyboard>/space",
+                    "id": "cf0e68ec-7b27-4e6a-bb5f-c05958b2aeb6",
+                    "path": "<Keyboard>/h",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Drop",
+                    "action": "Leave",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
