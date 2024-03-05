@@ -2492,6 +2492,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3435341039117179620, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435341039117179620, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3528135061169093363, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
         type: 3}
       propertyPath: dropArea
@@ -2501,6 +2511,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063130955344798857, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97c1f716d15d0374cb05ff3911af011a, type: 2}
+    - target: {fileID: 8181699184399068482, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.44
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
