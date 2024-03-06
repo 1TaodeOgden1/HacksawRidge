@@ -19,6 +19,8 @@ public class RaycastDetection : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit))
+            //The second argument is the direction of the raycast
+            //You need to change the direction to like: player.position - enemy.position
         {
             if (hit.transform.CompareTag(tagName))
             {
