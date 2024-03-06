@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.055608343, g: 0.039019052, b: 0.034408405, a: 1}
+  m_IndirectSpecularColor: {r: 0.055620182, g: 0.03903951, b: 0.034445133, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -476,7 +476,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 7d2d15647abfc3944988f127d9c8233e, type: 3}
     - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
       propertyPath: DOB
@@ -618,6 +618,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a4574b958c099af43871571d7836b34a, type: 3}
+    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
       propertyPath: DOB
@@ -848,6 +853,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b7bca9347cd04a499158c45eb668c6e, type: 3}
     - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
       propertyPath: DOB
@@ -1144,32 +1154,32 @@ PrefabInstance:
     - target: {fileID: 1114078752439182655, guid: 950fa122859f4744f81c9c527fd3144a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8754261
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1114078752439182655, guid: 950fa122859f4744f81c9c527fd3144a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.40821788
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1114078752439182655, guid: 950fa122859f4744f81c9c527fd3144a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.23456968
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1114078752439182655, guid: 950fa122859f4744f81c9c527fd3144a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10938163
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1114078752439182655, guid: 950fa122859f4744f81c9c527fd3144a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1114078752439182655, guid: 950fa122859f4744f81c9c527fd3144a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1114078752439182655, guid: 950fa122859f4744f81c9c527fd3144a,
         type: 3}
@@ -1180,6 +1190,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Directional Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101923321062983625, guid: 950fa122859f4744f81c9c527fd3144a,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7398095
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101923321062983625, guid: 950fa122859f4744f81c9c527fd3144a,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8843184
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101923321062983625, guid: 950fa122859f4744f81c9c527fd3144a,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8962264
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1208,7 +1233,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: a4574b958c099af43871571d7836b34a, type: 3}
     - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
       propertyPath: DOB
@@ -1598,7 +1623,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 7d2d15647abfc3944988f127d9c8233e, type: 3}
+      objectReference: {fileID: 8300000, guid: a4574b958c099af43871571d7836b34a, type: 3}
     - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
       propertyPath: DOB
@@ -2132,7 +2157,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: a4574b958c099af43871571d7836b34a, type: 3}
     - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
       propertyPath: DOB
@@ -2414,8 +2439,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3060589893505392257, guid: f80b99f985d44fc448485a6f12c5ac03, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
