@@ -315,7 +315,7 @@ PrefabInstance:
     - target: {fileID: 5459904879343139318, guid: 6f586ae3a6393a147aa2cfa562ec4637,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6141789089485154934, guid: 6f586ae3a6393a147aa2cfa562ec4637,
         type: 3}
@@ -662,79 +662,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a4574b958c099af43871571d7836b34a, type: 3}
-    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: BypassEffects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: DOB
-      value: 13589070 T42 43
-      objectReference: {fileID: 0}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: rank
-      value: 'Sargeant '
-      objectReference: {fileID: 0}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e275c6b3daea8ef46997f6f4f6f88977,
-        type: 3}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: bodyName
-      value: Coehl
-      objectReference: {fileID: 0}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: backgroundStory
-      value: 'As he stews in sweat and blood, the soldier mumbles incoherently. A
-        brass locket rests in his palm.   It shows a faded photo of two twin girls.   '
-      objectReference: {fileID: 0}
-    - target: {fileID: 2273535818435595083, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_text
-      value: "As he stews in sweat and blood, the soldier mumbles incoherently. A
-        brass locket rests in his palm. \r\n\r\nIt shows a faded photo of two twin
-        girls.  \r\n"
-      objectReference: {fileID: 0}
     - target: {fileID: 2381793625691522427, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
       propertyPath: m_Name
       value: Wounded
-      objectReference: {fileID: 0}
-    - target: {fileID: 2450308483262772749, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_text
-      value: 'Sargeant '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3557670072505200174, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_text
-      value: Coehl
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614254921394833629, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_text
-      value: 13589070 T42 43
       objectReference: {fileID: 0}
     - target: {fileID: 5486961891614980847, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
