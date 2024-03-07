@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             currentPosition = nextPosition;
         }
 
-        transform.position += currentPosition;
+        transform.position = currentPosition;
     }
 
     public void OnMove(InputValue value)
