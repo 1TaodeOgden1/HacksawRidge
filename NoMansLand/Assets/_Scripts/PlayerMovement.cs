@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lookDelta = Vector2.zero;
 
     public float lookSensitivity = 0.2f;
+    public BoxCollider bounds;
+
+    private Vector3 currentPosition;
+    private Vector3 nextPosition;
 
     // Update is called once per frame
     void Update()
@@ -44,7 +48,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0) * new Vector3(movement.x, 0, movement.y) * movementSpeed * Time.deltaTime;
+      
+        //calculate the next frame's position
+        nextPosition = currentPosition + Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0) * new Vector3(movement.x, 0, movement.y) * movementSpeed * Time.deltaTime;
+
+        //if within bounds, update position
+        if (bounds.bounds.Contains(nextPosition))
+        {
+            currentPosition = nextPosition;
+        }
+
+        transform.position = currentPosition;
     }
 
     public void OnMove(InputValue value)
