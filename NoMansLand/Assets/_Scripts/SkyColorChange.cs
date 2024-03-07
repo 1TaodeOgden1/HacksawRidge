@@ -11,8 +11,12 @@ public class SkyColorChange : MonoBehaviour
     private float rotateInterval;
     private float intensityInterval;
     private float timerBuffer;
+
+    private float initialAngle;
+    public float initialIntensity = 1.0f;
     void Start()
     {
+        RenderSettings.ambientIntensity = initialIntensity;
         timer = FindObjectOfType<Timer>();
         rotateInterval = (endLightAngle - startLightAngle) / timer.timeRemaining * Time.deltaTime;
         intensityInterval = (ambientEndIntensity - RenderSettings.ambientIntensity) / timer.timeRemaining * Time.deltaTime; 
