@@ -135,3 +135,4 @@ MonoBehaviour:
   endLightAngle: 15
   startLightAngle: 0
   ambientEndIntensity: 2
+  initialIntensity: 1
