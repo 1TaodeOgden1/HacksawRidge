@@ -20,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 currentPosition;
     private Vector3 nextPosition;
 
+    private void Start()
+    {
+        currentPosition = transform.position;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -48,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-      
         //calculate the next frame's position
         nextPosition = currentPosition + Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0) * new Vector3(movement.x, 0, movement.y) * movementSpeed * Time.deltaTime;
 
