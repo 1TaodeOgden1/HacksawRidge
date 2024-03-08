@@ -142,20 +142,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2756345277838376312, guid: 6f586ae3a6393a147aa2cfa562ec4637,
-        type: 3}
-      propertyPath: m_text
-      value: Find Ryan
-      objectReference: {fileID: 0}
     - target: {fileID: 4105805169514676041, guid: 6f586ae3a6393a147aa2cfa562ec4637,
         type: 3}
       propertyPath: m_Name
       value: Canvas (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4105805169514676041, guid: 6f586ae3a6393a147aa2cfa562ec4637,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4906571089150140302, guid: 6f586ae3a6393a147aa2cfa562ec4637,
         type: 3}
@@ -267,17 +257,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6364036624248324460, guid: 6f586ae3a6393a147aa2cfa562ec4637,
-        type: 3}
-      propertyPath: timeRemaining
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422200819726584894, guid: 6f586ae3a6393a147aa2cfa562ec4637,
-        type: 3}
-      propertyPath: drop
-      value: 
-      objectReference: {fileID: 2989661720603610778, guid: c91faef2e6a173e4293724e6e5734f23,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -603,79 +582,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: a4574b958c099af43871571d7836b34a, type: 3}
-    - target: {fileID: -5929673371184421450, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: BypassEffects
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: DOB
-      value: 13589070 T42 43
-      objectReference: {fileID: 0}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: rank
-      value: 'Sargeant '
-      objectReference: {fileID: 0}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e275c6b3daea8ef46997f6f4f6f88977,
-        type: 3}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: bodyName
-      value: Coehl
-      objectReference: {fileID: 0}
-    - target: {fileID: 506574504647629152, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: backgroundStory
-      value: 'As he stews in sweat and blood, the soldier mumbles incoherently. A
-        brass locket rests in his palm.   It shows a faded photo of two twin girls.   '
-      objectReference: {fileID: 0}
-    - target: {fileID: 2273535818435595083, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_text
-      value: "As he stews in sweat and blood, the soldier mumbles incoherently. A
-        brass locket rests in his palm. \r\n\r\nIt shows a faded photo of two twin
-        girls.  \r\n"
-      objectReference: {fileID: 0}
     - target: {fileID: 2381793625691522427, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
       propertyPath: m_Name
       value: Wounded
-      objectReference: {fileID: 0}
-    - target: {fileID: 2450308483262772749, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_text
-      value: 'Sargeant '
-      objectReference: {fileID: 0}
-    - target: {fileID: 3557670072505200174, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_text
-      value: Coehl
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614254921394833629, guid: 0b365867710587d418a3a4858fc5689f,
-        type: 3}
-      propertyPath: m_text
-      value: 13589070 T42 43
       objectReference: {fileID: 0}
     - target: {fileID: 5486961891614980847, guid: 0b365867710587d418a3a4858fc5689f,
         type: 3}
@@ -2359,11 +2269,6 @@ PrefabInstance:
       objectReference: {fileID: 1601742102}
     - target: {fileID: 1197253413730806456, guid: 6664eb93ad9e10245879913974e262c9,
         type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1197253413730806456, guid: 6664eb93ad9e10245879913974e262c9,
-        type: 3}
       propertyPath: objectiveText
       value: 
       objectReference: {fileID: 812691223}
@@ -2533,31 +2438,11 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 82
       objectReference: {fileID: 0}
-    - target: {fileID: 3435341039117179620, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3528135061169093363, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
         type: 3}
       propertyPath: dropArea
       value: 
       objectReference: {fileID: 531344394}
-    - target: {fileID: 5629095111842325975, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7063130955344798857, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 97c1f716d15d0374cb05ff3911af011a, type: 2}
-    - target: {fileID: 8181699184399068482, guid: eed91e46a45dd8b4d9cb7d6bea2db0f5,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.44
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
