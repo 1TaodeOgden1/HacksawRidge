@@ -51,7 +51,7 @@ Light:
   m_InnerSpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -132,7 +132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 683f7c9a5dac6a44caaa4b601e92dfcc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 683f7c9a5dac6a44caaa4b601e92dfcc, type: 3}
       propertyPath: m_LocalPosition.x
