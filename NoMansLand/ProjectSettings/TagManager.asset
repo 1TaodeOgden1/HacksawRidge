@@ -4,22 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Waypoints
+  - Body
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - PlayerObj
+  - 
   - Water
   - UI
-<<<<<<< Updated upstream
   - player
   - ground
-=======
-  - Ground
-  - 
->>>>>>> Stashed changes
   - 
   - 
   - 
