@@ -35,14 +35,14 @@ public class RectOverlapSolver : MonoBehaviour
 
     public void UpdateActiveContents()
     {
-        Debug.Log("Active Contents");
+        //Debug.Log("Active Contents");
         List<WorldUIToCam> tempContents = new List<WorldUIToCam>();
         foreach (WorldUIToCam c in contents)
         {
             if (c.gameObject.activeSelf)
             {
                 tempContents.Add(c);
-                Debug.Log(c.gameObject.name);
+                //Debug.Log(c.gameObject.name);
             }
         }
         activeContents = tempContents;

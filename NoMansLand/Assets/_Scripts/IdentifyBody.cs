@@ -67,6 +67,7 @@ public class IdentifyBody : MonoBehaviour
 
         Collider[] overlaps = Physics.OverlapCapsule(p1, p2, col.radius, Physics.AllLayers, QueryTriggerInteraction.UseGlobal);
         if (overlaps.Length == 0) return;
+        print("capsule hit something");
         for (int i = 0; i < overlaps.Length; i++)
         {
             if (!overlaps[i].transform.CompareTag("Body")) continue;

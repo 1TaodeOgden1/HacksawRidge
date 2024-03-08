@@ -8,24 +8,26 @@ public class SkyColorChange : MonoBehaviour
     public float endLightAngle;
     public float startLightAngle;
     public float ambientEndIntensity;
-    private float rotateInterval;
-    private float intensityInterval;
+    [SerializeField] private float rotateInterval;
+    [SerializeField] private float intensityInterval;
     private float timerBuffer;
 
     private float initialAngle;
     public float initialIntensity = 1.0f;
     void Start()
     {
+        transform.eulerAngles = new Vector3(initialAngle, 0,0);
         RenderSettings.ambientIntensity = initialIntensity;
         timer = FindObjectOfType<Timer>();
-        rotateInterval = (endLightAngle - startLightAngle) / timer.timeRemaining * Time.deltaTime;
-        intensityInterval = (ambientEndIntensity - RenderSettings.ambientIntensity) / timer.timeRemaining * Time.deltaTime; 
+
+        rotateInterval = (endLightAngle - startLightAngle) / timer.timeRemaining;
+        intensityInterval = (ambientEndIntensity - RenderSettings.ambientIntensity) / timer.timeRemaining;
     }
 
     private void FixedUpdate()
     {
-        transform.RotateAround(transform.position, transform.right, rotateInterval);
-        RenderSettings.ambientIntensity += intensityInterval;
+        transform.RotateAround(transform.position, transform.right, rotateInterval * Time.deltaTime);
+        RenderSettings.ambientIntensity += intensityInterval * Time.deltaTime;
     }
 
 }
