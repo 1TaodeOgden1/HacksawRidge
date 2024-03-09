@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText; 
 
     public GameObject finishedScreen;
+    public DropArea dropArea;
 
     private void Start()
     {
@@ -43,6 +44,7 @@ public class Timer : MonoBehaviour
 
     void OnTimeEnd()
     {
+        GetComponent<RescueTracker>().AddRescueData(new RescueData(dropArea.broSaved, dropArea.leftEarly, dropArea.namesSaved));
         finishedScreen.SetActive(true);
     }
 

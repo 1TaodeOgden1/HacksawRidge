@@ -17,6 +17,7 @@ public class DropArea : MonoBehaviour
     public string broName = "David";
     public bool broSaved = false;
     public Timer timer;
+    public bool leftEarly = false;
 
     public bool overlapping = false;
 
@@ -65,6 +66,7 @@ public class DropArea : MonoBehaviour
         Debug.Log("Hi");
         if (broSaved && overlapping)
         {
+            leftEarly = true;
             timer.timeRemaining = 0;
         }
 
