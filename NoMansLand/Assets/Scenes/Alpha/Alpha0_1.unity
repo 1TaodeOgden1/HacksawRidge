@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.055608343, g: 0.039019052, b: 0.034408405, a: 1}
+  m_IndirectSpecularColor: {r: 0.055620182, g: 0.03903951, b: 0.034445133, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2311,6 +2311,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Envornment
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499857516119276268, guid: f80b99f985d44fc448485a6f12c5ac03,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499857516119276268, guid: f80b99f985d44fc448485a6f12c5ac03,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2165746009114593081, guid: f80b99f985d44fc448485a6f12c5ac03,
         type: 3}
